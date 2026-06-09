@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --nintendo-red: #E60012;
+    --text-color: #FFFFFF;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--nintendo-red);
+    color: var(--text-color);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.logo-container {
+    width: 90%;
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.info-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.date-display {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.countdown {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid var(--text-color);
+    border-radius: 15px;
+    padding: 20px 25px;
+    min-width: 110px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    backdrop-filter: blur(5px);
+}
+
+.time-value {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.time-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* for smartphones */
+@media (max-width: 600px) {
+    .time-box {
+        min-width: 70px;
+        padding: 15px;
+        gap: 10px;
+    }
+    .time-value { font-size: 2.2rem; }
+    .time-label { font-size: 0.8rem; }
+    .date-display { font-size: 2rem; }
+    .info-text { font-size: 1.2rem; }
+}
