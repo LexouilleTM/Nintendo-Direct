@@ -54,10 +54,12 @@ function initNextDirect(directsList) {
         document.getElementById('direct-title').innerText = `${nextDirect.title}`;
     }
 
-    const day = String(targetDate.getDate()).padStart(2, '0');
-    const month = String(targetDate.getMonth() + 1).padStart(2, '0');
-    const year = targetDate.getFullYear();
-    document.getElementById('display-date').innerText = `${day}/${month}/${year}`;
+    const localFormatter = new Intl.DateTimeFormat(navigator.language, {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    });
+    document.getElementById('display-date').innerText = localFormatter.format(targetDate);
 
     updateCountdown();
     countdownInterval = setInterval(updateCountdown, 1000);
